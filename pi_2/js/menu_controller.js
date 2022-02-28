@@ -20,10 +20,13 @@ function options()
 	console.log("Options menu button");
 }
 
-function cookie()
+var count = 0;
+
+function ck()
 {
 	cookies = document.getElementById("cookie-count");
-	cookies.innerHTML = int(cookies) + 1;
+	count += 1;
+	cookies.innerHTML = count;
 }
 
 
