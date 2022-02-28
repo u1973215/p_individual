@@ -1,31 +1,41 @@
-#title{
+body
+{
+	background-color: #ddeeee;
+}
+
+#title
+{
 	font-size: 4em;
 	line-height: 75px;
 }
 
-.menu-object{
+.menu-object
+{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	width: 300px;
 	height: 75px;
-	font-size: 16px;
-	margin-top: 10px;
+	font-size: 1em;
+	margin-top: 1em;
 }
 
-p, h1{
+p, h1
+{
 	text-align: center;
 }
 
-button.menu-object:active{
-	font-size: 18px;
+button.menu-object:active
+{
+	font-size: 0.9em;
 	width: 275px;
 	height: 70px;
 	background-color: #b3e85d;
 }
 
-button.menu-object:hover:not(:active){
-	font-size: 22px;
+button.menu-object:hover:not(:active)
+{
+	font-size: 1.2em;
 	width: 325px;
 	height: 85px;
 	background-color: #eaf2c7;

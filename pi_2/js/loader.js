@@ -1,4 +1,5 @@
-function loadpage(url){
+function loadpage(url)
+{
 	window.location.assign(url);
 }
 
