@@ -9,20 +9,27 @@
 		<title> My first game - Menu </title>
 	</head>
 	<body>
-		<h1 id="title">Memory menu</h1>
-		<button class="menu-object" onclick="start_game()"> 
-			Start Game 
-		</button>
-		<button class="menu-object" onclick="options()"> 
-			Options 
-		</button>
-		<button class="menu-object" onclick="exit()"> 
-			Exit 
-		</button>
-		<button class="menu-object" onclick="ck()"> 
-			Click me
-		</button>
-		<p id="cookie-count">0</p>
+		<div class="menu">
+			<h1 class="menu-object" id="title">Memory menu</h1>
+			<button class="menu-object" id="start" onclick="start_game()"> 
+				Start Game 
+			</button>
+			<button class="menu-object" id="options" onclick="options()"> 
+				Options 
+			</button>
+			<button class="menu-object" id="exit" onclick="exit()"> 
+				Exit 
+			</button>
+			<div id="cookie-section">
+				<p>YOU FOUND THE SECRET!!!</p>
+				<button class="menu-object" onclick="ck()"> 
+					Click me
+				</button>
+				<p>Cookies: <b id="cookie-count">0</b></p>
+				<p>Cookies for next upgrade: <b id="upreq">25</b></p>
+				<button class="menu-object" id="upgrade" onclick="upgrade()" disabled>Upgrade</button>
+			</div>
+		</div>
 	</body>
 </html>
 

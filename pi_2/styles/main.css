@@ -5,39 +5,76 @@ body
 
 #title
 {
+	height: auto;
 	font-size: 4em;
 	line-height: 75px;
+	grid-area: title;
+}
+
+.menu
+{
+	margin: 20vh 20% 0 20%;
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	grid-template-areas:
+		'. title .'
+		'left middle right'
+		'. cookie .';
+	gap: 30px;
+	align-items: center;
 }
 
 .menu-object
 {
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 300px;
+	margin: auto;
+	width: 325px;
 	height: 75px;
-	font-size: 1em;
-	margin-top: 1em;
+	font-size: 1.4em;
+	font-family: monospace;
+	text-align: center;
 }
+
+#cookie-section
+{
+	grid-area: cookie;
+	margin-top: 60vh;
+}
+
+.pracs { grid-area: middle; }
+#start { grid-area: left; }
+#options { grid-area: middle; }
+#exit { grid-area: right; }
 
 p, h1
 {
 	text-align: center;
+	font-family: monospace;
 }
 
 button.menu-object:active
 {
-	font-size: 0.9em;
-	width: 275px;
-	height: 70px;
+	width: 250px;
 	background-color: #b3e85d;
 }
 
 button.menu-object:hover:not(:active)
 {
-	font-size: 1.2em;
+	font-weight: bold;
 	width: 325px;
-	height: 85px;
 	background-color: #eaf2c7;
+}
+
+#game
+{
+	width: auto;
+	margin: 1em auto;
+	display: flex;
+	justify-content: center;
+}
+
+#game img
+{
+	margin-right: 10px;
 }
 
