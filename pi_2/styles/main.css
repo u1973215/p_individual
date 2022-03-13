@@ -38,7 +38,7 @@ body
 #cookie-section
 {
 	grid-area: cookie;
-	margin-top: 60vh;
+	margin-top: 65vh;
 }
 
 .pracs { grid-area: middle; }
