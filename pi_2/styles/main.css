@@ -27,7 +27,7 @@ body
 .menu-object
 {
 	display: block;
-	margin: auto;
+	margin: 2vh auto;
 	width: 325px;
 	height: 75px;
 	font-size: 1.4em;
