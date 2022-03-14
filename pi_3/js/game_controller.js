@@ -31,6 +31,7 @@ var game = new Vue({
 				this.dif_mult = 40;
 				break;
 		}
+		console.log(this.dif_mult);
 
 		this.username = sessionStorage.getItem("username","unknown");
 		this.items = items.slice(); // Copiem l'array
@@ -39,13 +40,21 @@ var game = new Vue({
 		this.items = this.items.concat(this.items); // Dupliquem els elements
 		this.items.sort(function(){return Math.random() - 0.5}); // Array aleatòria
 		for (var i = 0; i < this.items.length; i++){
-			this.current_card.push({done: false, texture: back});
+			this.current_card.push({done: false, texture: back, id:i, goback: function(){
+				this.texture = back; ////////////////////////////////////////
+			}});
 		}
 	},
 	methods: {
 		clickCard: function(i){
 			if (!this.current_card[i].done && this.current_card[i].texture === back)
 				Vue.set(this.current_card, i, {done: false, texture: this.items[i]});
+		},
+		
+		////////////////////////////////////////
+		amagarCarta: function()
+		{
+			Vue.set(this.current_card, i_front, {done: false, texture: back});
 		}
 	},
 	watch: {
@@ -62,7 +71,8 @@ var game = new Vue({
 						}
 						else{
 							Vue.set(this.current_card, i, {done: false, texture: back});
-							Vue.set(this.current_card, i_front, {done: false, texture: back});
+							setTimeout(function(){this.current_card.goback()},2000/this.dif_mult);
+							////////////////////////////////////////
 							this.bad_clicks++;
 							break;
 						}
@@ -77,7 +87,7 @@ var game = new Vue({
 	},
 	computed: {
 		score_text: function(){
-			return 100 - this.bad_clicks * dif_mult;
+			return 100 - this.bad_clicks * this.dif_mult;
 		}
 	}
 });
