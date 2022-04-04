@@ -71,7 +71,7 @@ var game = new Vue({
 						}
 						else{
 							Vue.set(this.current_card, i, {done: false, texture: back});
-							setTimeout(()=>{this.current_card.goback()},2000/this.dif_mult);
+							setTimeout(()=>{this.current_card[i].goback()},2000/this.dif_mult);
 							////////////////////////////////////////
 							this.bad_clicks++;
 							break;
