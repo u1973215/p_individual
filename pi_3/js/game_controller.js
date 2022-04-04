@@ -40,9 +40,7 @@ var game = new Vue({
 		this.items = this.items.concat(this.items); // Dupliquem els elements
 		this.items.sort(function(){return Math.random() - 0.5}); // Array aleatòria
 		for (var i = 0; i < this.items.length; i++){
-			this.current_card.push({done: false, texture: back, id:i, goback: function(){
-				this.texture = back; ////////////////////////////////////////
-			}});
+			this.current_card.push({done: false, texture: back, id:i});
 		}
 	},
 	methods: {
@@ -70,8 +68,10 @@ var game = new Vue({
 							this.num_cards--;
 						}
 						else{
-							Vue.set(this.current_card, i, {done: false, texture: back});
-							setTimeout(()=>{this.current_card[i].goback()},2000/this.dif_mult);
+							setTimeout(()=>{
+								Vue.set(this.current_card, i_front, {done: false, texture: back});
+								Vue.set(this.current_card, i, {done: false, texture: back});
+							},2000/this.dif_mult);
 							////////////////////////////////////////
 							this.bad_clicks++;
 							break;
